@@ -1,6 +1,6 @@
 # JSON API Check
 
-**check_json - Use Nagios / Icinga to monitor JSON endpoints**
+**check-json - Use Nagios / Icinga to monitor JSON endpoints**
 
 This plugin tests JSON API endpoints served over HTTP. It can check for the
 existence of keys or do simple checks against values in the JSON response.
@@ -13,7 +13,7 @@ regex test of string values and is a stand-alone binary.
 
 Basic Usage:
 ```bash
-  check_json --hostname=time.jsontest.com \
+  check-json --hostname=time.jsontest.com \
     --key-exists=time --key-equals=date:2016
 ```
 
@@ -69,17 +69,16 @@ Your GOHOME can be anywhere you choose.
 Building is more painful than normal because it is not a public repo.
 
 ```
-go build https://github.com/werrett/check-json
-go build -o $GOPATH/bin/check_json
+go build github.com/werrett/check-json
 ```
 
 Now Check that you have it installed OK:
 
 ```bash
-check_json --help
+check-json --help
 
 Usage:
-  check_json [OPTIONS]
+  check-json [OPTIONS]
 
 Application Options:
   ...
@@ -89,14 +88,14 @@ Application Options:
 Simple JSON key exists and regex against key value:
 
 ```bash
-check_json --hostname=time.jsontest.com  \
+check-json --hostname=time.jsontest.com  \
   --key-exists=time --key-equals=date:2016 --verbose
 ```
 
 Simple check using SSL:
 
 ```bash
-check_json --ssl --hostname=api.foursquare.com \
+check-json --ssl --hostname=api.foursquare.com \
    --uri='/v2/venues/4e37bb6aa809a0c63b3882e8?client_id=...&client_secret=...&v=20150313' \
    --key-exists=response
 ```
@@ -104,7 +103,7 @@ check_json --ssl --hostname=api.foursquare.com \
 Check adding an authentication header:
 
 ```bash
-check_json --hostname=company.clearbit.co \
+check-json --hostname=company.clearbit.co \
   --uri=/v1/companies/domain/clearbit.co --ssl \
   --header="Authorization:Bearer ..." \
   --key-equals="legalName:Clearbit" --verbose
