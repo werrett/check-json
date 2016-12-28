@@ -8,7 +8,8 @@ existence of keys or do simple checks against values in the JSON response.
 Command line flags have been chosen to be compatible with the common Nagios
 [check_http](https://www.monitoring-plugins.org/doc/man/check_http.html) plugin.
 Pattern for JSON tests from [Python JSON
-Check](https://github.com/drewkerrigan/nagios-http-json).
+Check](https://github.com/drewkerrigan/nagios-http-json). This version allows
+regex test of string values and is a stand-alone binary.
 
 Basic Usage:
 ```bash
