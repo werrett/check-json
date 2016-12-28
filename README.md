@@ -96,7 +96,7 @@ Simple check using SSL:
 
 ```bash
 check-json --ssl --hostname=api.foursquare.com \
-   --uri='/v2/venues/4e37bb6aa809a0c63b3882e8?client_id=...&client_secret=...&v=20150313' \
+   --uri='/v2/venues/4e37bb6aa809a0c63b3882e8?client_id=AA...&client_secret=XX...&v=20150313' \
    --key-exists=response
 ```
 
@@ -105,8 +105,8 @@ Check adding an authentication header:
 ```bash
 check-json --hostname=company.clearbit.co \
   --uri=/v1/companies/domain/clearbit.co --ssl \
-  --header="Authorization:Bearer ..." \
-  --key-equals="legalName:Clearbit" --verbose
+  --header="Authorization:Bearer sk_..." \
+  --key-equals="name:Clearbit" --verbose
 ```
 
 
