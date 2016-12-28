@@ -1,0 +1,17 @@
+# Temp files
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
+# OSX
+.DS_Store
+
+# Test files
+test*
+
+# Binary output
+check_json
+check-json
